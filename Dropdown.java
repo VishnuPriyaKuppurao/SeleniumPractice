@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
 
 public class Dropdown {
 
@@ -29,10 +31,13 @@ public class Dropdown {
 		while(i<9)
 		{
 		driver.findElement(By.id("hrefIncAdt")).click();
+		
 		i++;
 		}
 		driver.findElement(By.id("btnclosepaxoption")).click();
-		System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
+		String count= driver.findElement(By.id("divpaxinfo")).getText();
+		//Assert.assertEquals(false, false);
+		Assert.assertEquals( count,"9 Adult");
 		//DYNAMIC
 		driver.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
 		Thread.sleep(1000);

@@ -1,11 +1,14 @@
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
+
 import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class AutoSuggestiveDropdown {
 
@@ -29,6 +32,18 @@ public class AutoSuggestiveDropdown {
 				break;
 			}
 			
+		}
+		//driver.findElement(By.className("ui-state-default ui-state-active")).click();
+		if(driver.findElement(By.id("Div1")).getDomAttribute("style").contains("0.5"))
+		{
+			System.out.println("Its disabled");
+			//Assert.assertTrue(true);
+		}
+		driver.findElement(By.id("ctl00_mainContent_rbtnl_Trip_1")).click();
+		if(driver.findElement(By.id("Div1")).getDomAttribute("style").contains("1"))
+		{
+			System.out.println("Its enabled");
+			Assert.assertTrue(true);
 		}
 		Thread.sleep(4000);
 		driver.close();

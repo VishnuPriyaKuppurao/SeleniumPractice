@@ -8,7 +8,7 @@ public class alerts {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		WebDriver driver=new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		driver.manage().window().maximize();
@@ -23,7 +23,6 @@ public class alerts {
 		Thread.sleep(1000);
 		driver.switchTo().alert().dismiss();
 		driver.close();
-		
 
 	}
 
